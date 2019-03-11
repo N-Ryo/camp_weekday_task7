@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+      <h1>タイトルを自分で考えて記入して下さい。</h1>
+      <p>説明文を自分で考えて記入して下さい。</p>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <%= link_to 'Articles', articles_path, class: 'navbar-brand' %>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <%= link_to 'New posts', new_article_path %>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
