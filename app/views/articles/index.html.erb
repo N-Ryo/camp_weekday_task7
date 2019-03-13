@@ -1,7 +1,9 @@
 <% @articles.each do |article| %>
-  <h5><%= article.title %></h5>
-  <p><%= article.created_at.strftime('%a %d, %Y') %></p>
-  <p><%= article.body.truncate(100) %></p>
-  <p><%= link_to 'More etail', article %></p>
+  <div class="mt-2 mb-5">
+    <h5><%= article.title %></h5>
+    <p><%= article.created_at.strftime('%a %d, %Y') %></p>
+    <p><%= article.body.truncate(100) %></p>
+    <p><%= link_to 'More detail', article, class: 'text-dark' %></p>
+  </div>
 <% end %>
 <%= link_to '新規論文投稿', new_article_path %>

@@ -1,8 +1,13 @@
-<h1>Article Detail</h1>
+<h1 class='mb-3'>Article Detail</h1>
+<table class="table table-bordered table-striped">
+  <tr><th>タイトル：<%= @article.title %></th></tr>
+    <tr>
+      <td class='pt-3 pb-3'>
+      <%= simple_format(@article.body) %>
+      <%= link_to 'Articles', articles_path, class: "btn btn-dark" %>
+      <%= link_to 'Edit', edit_article_path, class: "btn btn-dark ml-3" %>
+      <%= link_to 'Delete', article_path, method: :delete, data: { confirm: '削除してよろしいですか？' }, class: "btn btn-dark ml-3"  %>
+      </td>
+    </tr>
+</table>
 
-<p>タイトル：<%= @article.title %></p>
-<%= simple_format(@article.body) %>
-
-<%= link_to 'Articles', articles_path, class: "btn btn-dark" %>
-<%= link_to 'Edit', edit_article_path, class: "btn btn-dark" %>
-<%= link_to 'Delete', article_path, method: :delete, data: { confirm: '削除してよろしいですか？' }, class: "btn btn-dark"  %>
