@@ -1,8 +1,12 @@
+<%# eachで配列@articlesを一つずつ取り出し、bootstrapで整形しながら出力 %>
 <% @articles.each do |article| %>
   <div class="mt-2 mb-5">
     <h5><%= article.title %></h5>
+    <%# strftimeで期待通りの出力「Mar 10, 2019」を得られるように記述 %>
     <p><%= article.created_at.strftime('%a %d, %Y') %></p>
+    <%# truncateメソッドを使用し、最大文字数をlength=100としてbodyを表示して下さい。 %>
     <p><%= article.body.truncate(100) %></p>
+    <%# More detailから詳細画面へ遷移できるようにして下さい。 %>
     <p><%= link_to 'More detail', article, class: 'text-dark' %></p>
   </div>
 <% end %>
