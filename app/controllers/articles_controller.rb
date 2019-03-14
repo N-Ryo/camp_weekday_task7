@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  # @article に値を格納するコードのリファクタリング
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -32,10 +33,11 @@ class ArticlesController < ApplicationController
   end
 
   private
+    # ストロングパラメータを定義
     def article_params
       params.require(:article).permit(:title, :body)
     end
-
+    # URIからidを使い、Articleモデルから1つ値を格納
     def set_article
       @article = Article.find(params[:id])
     end
