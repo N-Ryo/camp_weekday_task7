@@ -1,0 +1,8 @@
+<h1>論文詳細</h1>
+
+<p>タイトル：<%= @article.title %></p>
+<%= simple_format(@article.body) %>
+
+<%= link_to '一覧へ戻る', articles_path %>
+<%= link_to '編集', edit_article_path %>
+<%= link_to '削除', article_path, method: :delete, data: { confirm: '削除してよろしいですか？' }  %>
