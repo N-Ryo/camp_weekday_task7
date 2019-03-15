@@ -1,0 +1,13 @@
+<%# bootstrapで整形していく %>
+<div class="form-group">
+  <h1>New posts</h1>
+
+  <%= form_with model: @article, local: true do |form|%>
+    <%= form.label 'Title', class: 'mt-4'%>
+    <%= form.text_field :title, class: 'form-control' %>
+    <%= form.label 'Body', class: 'mt-4'%>
+    <%# rowsでテキストフィールドの高さを調節する。 %>
+    <%= form.text_area :body, rows: "8", class: 'form-control' %>
+    <%= form.submit 'Submit', class: 'btn btn-dark form-control mt-3' %>
+  <% end %>
+</div>
